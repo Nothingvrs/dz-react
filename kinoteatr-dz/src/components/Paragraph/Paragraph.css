@@ -1,10 +1,9 @@
 .paragraph {
 	color: rgb(142, 149, 169);
-	font-family: Poppins;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 24px;
-	letter-spacing: 0%;
 	text-align: left;
 	margin: 16px 0px;
+	width: 588px;
 }
