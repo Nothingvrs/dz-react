@@ -1,10 +1,13 @@
 import './Input.css';
+import classNames from 'classnames';
 
 function Input({ img }) {
 	const placehldr = 'Введите название';
-
-	let inptClass = 'image';
-	if (!img) inptClass =+ ' undisplay';
+	
+	const inptClass = classNames({
+		'image': img,
+		'undisplay': !img
+	});
 
 	return (
 		<div className='wrapper'>
