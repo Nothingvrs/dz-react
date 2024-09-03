@@ -2,10 +2,6 @@ import './FilmCard.css';
 
 function FilmCard({ image, titlecard, isFavourite, favouriteCount}) {
 	
-	const cl = isFavourite ? 'favourite-button favourite' : 'favourite-button';
-	const buttonText = isFavourite ? 'В избранном' : 'В избранное';
-	const imgfvr = isFavourite ? '/favorite.svg' : '/like.svg';
-
 	return (
 		<div className='film-card'>
 			<div className='card-image-wrapper'>
@@ -17,8 +13,10 @@ function FilmCard({ image, titlecard, isFavourite, favouriteCount}) {
 			</div>
 			<p className='card-title'>{titlecard}</p>
 			<div className='card-wrapper-favourite'>
-				<img src={imgfvr} alt="" />
-				<button className={cl}>{buttonText}</button>
+				<img src={isFavourite ? '/favorite.svg' : '/like.svg'} alt="" />
+				<button className={isFavourite ? 'favourite-button favourite' : 'favourite-button'}>
+					{isFavourite ? 'В избранном' : 'В избранное'}
+				</button>
 			</div>
 		</div>
 	);

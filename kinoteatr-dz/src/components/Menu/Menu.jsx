@@ -1,11 +1,28 @@
 import MenuLink from '../MenuLink/MenuLink';
 import './Menu.css';
 
-function Menu({ btndata }) {
+const btnData = [
+	{
+		id: 1,
+		text: 'Поиск фильмов'
+	},
+	{
+		id: 2,
+		text: 'Мои фильмы',
+		btnimg: '/countFilms.svg'
+	},
+	{
+		id: 3,
+		text: 'Войти',
+		btnimg: '/enter.svg'
+	}
+];
+
+function Menu() {
 
 	return (
 		<div className='menu'>
-			{btndata.map(btn => (
+			{btnData.map(btn => (
 				<MenuLink key={btn.id}
 					text={btn.text}
 					img={btn.btnimg}

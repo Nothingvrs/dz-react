@@ -1,9 +1,9 @@
 import './Logo.css';
 
-function Logo() {
+function Logo({ img }) {
 
 	return (
-		<img src="/logo.svg" alt="Логотип кинотеатра" />
+		<img src={img} alt="Логотип кинотеатра" />
 	);
 }
 

@@ -1,6 +1,8 @@
 import './Paragraph.css';
 
-function Paragraph({ paragraph }) {
+function Paragraph() {
+
+	const paragraph = 'Введите название фильма, сериала или мультфильма для поиска и добавления в избранное';
 
 	return (
 		<p className='paragraph'>{paragraph}</p>

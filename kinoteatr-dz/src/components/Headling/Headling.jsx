@@ -1,9 +1,9 @@
 import './Headling.css';
 
-function Headling({ headling }) {
+function Headling({ children }) {
 
 	return (
-		<h1 className='headling'>{headling}</h1>
+		<h1 className='headling'>{children}</h1>
 	);
 }
 

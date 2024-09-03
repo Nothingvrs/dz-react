@@ -1,11 +1,14 @@
 import './Input.css';
 
-function Input({ cls, placehldr }) {
-	const cl = 'image' + (cls ? ' '+ cls : '');
+function Input({ img }) {
+	const placehldr = 'Введите название';
+
+	let inptClass = 'image';
+	if (!img) inptClass =+ ' undisplay';
 
 	return (
 		<div className='wrapper'>
-			<img className={cl} src="/search.svg" alt="" />
+			<img className={inptClass} src={img} alt="Поиск" />
 			<input className='input' type='text' placeholder={placehldr}></input>
 		</div>
 	);
