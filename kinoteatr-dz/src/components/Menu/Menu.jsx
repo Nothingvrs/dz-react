@@ -1,19 +1,19 @@
+import MenuLink from '../MenuLink/MenuLink';
 import './Menu.css';
 
-function Menu() {
+function Menu({ btndata }) {
 
 	return (
-		<ul className='menu'>
-			<a className='menu-search' href="#">Поиск фильмов</a>
-			<div className='menu-films'>
-				<a href="#">Мои фильмы</a>
-				<img src="/countFilms.svg" alt="Количество фильмов" />
-			</div>
-			<div className='menu-enter'>
-				<a href="#">Войти</a>
-				<img src="/enter.svg" alt="Количество фильмов" />
-			</div>
-		</ul>
+		<div className='menu'>
+			{btndata.map(btn => (
+				<MenuLink key={btn.id}
+					text={btn.text}
+					img={btn.btnimg}
+				/>
+			)
+			)
+			}
+		</div>
 	);
 }
 
