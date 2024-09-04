@@ -1,0 +1,68 @@
+.film-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 16;
+	padding: 8px 8px 16px 8px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	text-align: left;
+	width: 266px;
+	border-radius: 12px;
+	backdrop-filter: blur(80px);
+	background: rgba(32, 40, 62, 0.8);		
+}
+
+.card-image-wrapper img {
+	border-radius: 12px;
+}
+
+.favourite-button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	color: rgb(123, 110, 246);
+}
+
+.favourite {
+	color: rgb(55, 216, 167);
+}
+
+.card-wrapper-favourite {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	align-items: center;
+	margin-left: 8px;
+	margin-bottom: 6px;
+}
+
+.card-favourite-count{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	width: 61px;
+	height: 32px;
+	padding: 4px 8px 4px 8px;
+	border-radius: 8px;
+	backdrop-filter: blur(8px);
+	background: rgba(32, 40, 62, 0.8);	
+	font-size: 16px;
+	font-weight: 400;
+	color: rgb(255, 189, 109);
+	position: absolute;
+	top: 16px;
+	left: 16px;
+}
+
+.card-title {
+	margin-left: 8px;
+}
