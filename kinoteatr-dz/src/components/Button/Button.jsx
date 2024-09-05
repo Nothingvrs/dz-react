@@ -1,9 +1,9 @@
-import './Button.css';
+import styles from './Button.module.css';
 
 function Button({children}) {
 	
 	return (
-		<button className='button'>{children}</button>
+		<button className={styles['button']}>{children}</button>
 	);
 }
 

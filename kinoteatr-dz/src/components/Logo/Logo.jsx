@@ -1,4 +1,4 @@
-import './Logo.css';
+
 
 function Logo({ img }) {
 

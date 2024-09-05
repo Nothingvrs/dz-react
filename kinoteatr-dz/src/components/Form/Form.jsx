@@ -1,13 +1,9 @@
-import './Form.css';
+import styles from './Form.module.css';
 
 function Form({ children }) {
-	const sbmt = (e) => {
-		e.preventDefault();
-		console.log('Нажалась');
-	};
-
+	
 	return (
-		<form className='search' onSubmit={sbmt} action="">
+		<form className={styles['search']} action="">
 			{children}
 		</form>
 	);

@@ -1,19 +1,14 @@
-import './Input.css';
-import classNames from 'classnames';
+import styles from './Input.module.css';
+import cl from 'classnames';
 
 function Input({ img }) {
 	const placehldr = 'Введите название';
 	
-	const inptClass = classNames({
-		'image': img,
-		'undisplay': !img
-	});
-
 	return (
-		<div className='wrapper'>
-			<img className={inptClass} src={img} alt="Поиск" />
-			<input className='input' type='text' placeholder={placehldr}></input>
-		</div>
+		<span className={styles['wrapper']}>
+			<img className={cl({[styles['undisplay']]:!img})} src={img} alt="Поиск" />
+			<input className={styles['input']} type='text' placeholder={placehldr}></input>
+		</span>
 	);
 }
 
