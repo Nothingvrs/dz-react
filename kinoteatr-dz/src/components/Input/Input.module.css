@@ -1,5 +1,4 @@
 .input {
-	width: 312px;
 	height: 40px;
 	background: transparent;
   border: none;
@@ -19,6 +18,7 @@
 }
 
 .wrapper {
+	width: 312px;
 	display: flex;
 	flex-direction: row;
 	gap: 16px;
@@ -32,4 +32,9 @@
 
 .undisplay {
 	display: none;
+}
+
+.invalid {
+	border: 1px solid red;
+	background: rgb(113,13,13);
 }
