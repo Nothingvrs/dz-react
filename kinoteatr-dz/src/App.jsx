@@ -7,15 +7,15 @@ import Logo from './components/Logo/Logo';
 import Menu from './components/Menu/Menu';
 import Form from './components/Form/Form';
 // import FilmDesc from './layouts/FilmDesc/FilmDesc';
-import { NOUSER } from './constants/constants';
 import { useLocalStorage } from './hooks/use-localstorage.hook';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from './context/user.context';
 
 
 function App() {
 
 	const [data, setData] = useLocalStorage(['data']);
-	const [user, setUser] = useState(NOUSER);
+	const { setUser } = useContext(UserContext);
 	
 	function checkData(profName) {
 		let flag = true;
@@ -32,14 +32,8 @@ function App() {
 		return flag;
 	}
 
-	function clearUser() {
-		setUser({
-			name: null,
-			isLogined: false
-		});
-	} 
-
 	function addProfile(name) {
+		console.log(setUser);
 		if (checkData(name)) {
 			setData([...data, {
 				name: name,
@@ -56,7 +50,7 @@ function App() {
 		<>
 			<Header>
 				<Logo img={'/logo.svg'}/>
-				<Menu clearUser={clearUser} isLogined={user.isLogined} name={user.name}/>	
+				<Menu />	
 			</Header>
 			<Container>
 				<Headling>Вход</Headling>

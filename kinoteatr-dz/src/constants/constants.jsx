@@ -58,11 +58,6 @@ export const CARDS =
 	}
 ];
 
-export const NOUSER = {
-	name: null,
-	isLogined: false
-};
-
 export const BTNDATA = [
 	{
 		id: 1,

@@ -1,17 +1,19 @@
 import MenuLink from '../MenuLink/MenuLink';
 import styles from './Menu.module.css';
 import { BTNDATA } from '../../constants/constants';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { UserContext } from '../../context/user.context';
 
-function Menu({ isLogined, name, clearUser }) {
+function Menu() {
 	const [btndata, setBtnData] = useState(BTNDATA);
+	const { user, setUser } = useContext(UserContext);
 
 	useEffect(() => {
-		if (isLogined) {
+		if (user.isLogined) {
 			setBtnData(oldBtnData =>
 				[...oldBtnData.toSpliced(-1,1, {
 					id: 3,
-					text: name,
+					text: user.name,
 					btnimg: '/profile.svg'
 				},
 				{
@@ -19,8 +21,16 @@ function Menu({ isLogined, name, clearUser }) {
 					text: 'Выйти'
 				})]);
 		}	
-		isLogined = false;	
-	}, [name]);
+		console.log(user);
+		user.isLogined = false;	
+	}, [user.name]);
+
+	function clearUser() {
+		setUser({
+			name: null,
+			isLogined: false
+		});
+	} 
 
 	const isLogginOut = () => {
 		setBtnData(BTNDATA);
