@@ -1,31 +1,49 @@
 import MenuLink from '../MenuLink/MenuLink';
-import './Menu.css';
-
-const btnData = [
-	{
-		id: 1,
-		text: 'Поиск фильмов'
-	},
-	{
-		id: 2,
-		text: 'Мои фильмы',
-		btnimg: '/countFilms.svg'
-	},
-	{
-		id: 3,
-		text: 'Войти',
-		btnimg: '/enter.svg'
-	}
-];
+import styles from './Menu.module.css';
+import { BTNDATA } from '../../constants/constants';
+import { useEffect, useState, useContext } from 'react';
+import { UserContext } from '../../context/user.context';
 
 function Menu() {
+	const [btndata, setBtnData] = useState(BTNDATA);
+	const { user, setUser } = useContext(UserContext);
+
+	useEffect(() => {
+		if (user.isLogined) {
+			setBtnData(oldBtnData =>
+				[...oldBtnData.toSpliced(-1,1, {
+					id: 3,
+					text: user.name,
+					btnimg: '/profile.svg'
+				},
+				{
+					id: 4,
+					text: 'Выйти'
+				})]);
+		}	
+		console.log(user);
+		user.isLogined = false;	
+	}, [user.name]);
+
+	function clearUser() {
+		setUser({
+			name: null,
+			isLogined: false
+		});
+	} 
+
+	const isLogginOut = () => {
+		setBtnData(BTNDATA);
+		clearUser();
+	};
 
 	return (
-		<div className='menu'>
-			{btnData.map(btn => (
+		<div className={styles['menu']}>
+			{btndata.map(btn => (
 				<MenuLink key={btn.id}
 					text={btn.text}
 					img={btn.btnimg}
+					onClick = {(btn.id === 4) ? isLogginOut : null}
 				/>
 			)
 			)

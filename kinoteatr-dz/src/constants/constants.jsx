@@ -57,3 +57,20 @@ export const CARDS =
 		favouriteCount: 456
 	}
 ];
+
+export const BTNDATA = [
+	{
+		id: 1,
+		text: 'Поиск фильмов'
+	},
+	{
+		id: 2,
+		text: 'Мои фильмы',
+		btnimg: '/countFilms.svg'
+	},
+	{
+		id: 3,
+		text: 'Войти',
+		btnimg: '/enter.svg'
+	}
+];

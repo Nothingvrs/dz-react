@@ -1,20 +1,17 @@
-import './Input.css';
-import classNames from 'classnames';
+import styles from './Input.module.css';
+import cl from 'classnames';
+import { forwardRef } from 'react';
 
-function Input({ img }) {
-	const placehldr = 'Введите название';
-	
-	const inptClass = classNames({
-		'image': img,
-		'undisplay': !img
-	});
-
+const Input = forwardRef(function Input({ onChange, img, placehldr, isValid, value }, ref) {
+		
 	return (
-		<div className='wrapper'>
-			<img className={inptClass} src={img} alt="Поиск" />
-			<input className='input' type='text' placeholder={placehldr}></input>
-		</div>
+		<span className={styles['wrapper']}>
+			<img className={cl({[styles['undisplay']]:!img})} src={img} alt="Поиск" />
+			<input ref={ref} value={value} onChange={onChange} className={cl(styles['input'], {
+				[styles['invalid']]: !isValid
+			})} type='text' placeholder={placehldr}></input>
+		</span>
 	);
-}
+});
 
 export default Input;

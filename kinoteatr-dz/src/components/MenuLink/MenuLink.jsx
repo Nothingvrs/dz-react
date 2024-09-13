@@ -1,13 +1,11 @@
-import './MenuLink.css';
+import styles from './MenuLink.module.css';
 
-function MenuLink({ text, img }) {
-
-	const isImg = img ? <img src={img} alt="Количество фильмов" /> : '';
+function MenuLink({ text, img, onClick }) {
 
 	return (
-		<div className='menu-link'>
-			<a href="#">{text}</a>
-			{isImg}
+		<div className={styles['menu-link']}>
+			<a onClick={onClick} href="#">{text}</a>
+			{img && <img src={img} alt="Количество фильмов" />}
 		</div>
 	);
 }

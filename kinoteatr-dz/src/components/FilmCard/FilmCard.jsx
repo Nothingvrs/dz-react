@@ -1,20 +1,23 @@
-import './FilmCard.css';
+import styles from './FilmCard.module.css';
+import cl from 'classnames';
 
 function FilmCard({ image, titlecard, isFavourite, favouriteCount}) {
 	
 	return (
-		<div className='film-card'>
-			<div className='card-image-wrapper'>
-				<div className='card-favourite-count'>
+		<div className={styles['film-card']}>
+			<div className={styles['card-image-wrapper']}>
+				<div className={styles['card-favourite-count']}>
 					<img src="/star.svg" alt="Количество добавивших в избранное" />
 					{favouriteCount}
 				</div>
 				<img src={image} alt="Обложка фильма" />
 			</div>
-			<p className='card-title'>{titlecard}</p>
-			<div className='card-wrapper-favourite'>
+			<p className={styles['card-title']}>{titlecard}</p>
+			<div className={styles['card-wrapper-favourite']}>
 				<img src={isFavourite ? '/favorite.svg' : '/like.svg'} alt="" />
-				<button className={isFavourite ? 'favourite-button favourite' : 'favourite-button'}>
+				<button className={cl(styles['favourite-button'], {
+					[styles['favourite']]: isFavourite
+				})}>
 					{isFavourite ? 'В избранном' : 'В избранное'}
 				</button>
 			</div>

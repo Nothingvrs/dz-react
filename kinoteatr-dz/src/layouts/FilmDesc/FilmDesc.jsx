@@ -1,10 +1,10 @@
-import './FilmDesc.css';
+import styles from './FilmDesc.module.css';
 import FilmCard from '../../components/FilmCard/FilmCard';
 
 function FilmDesc({ cards }) {
 
 	return (
-		<div className='film-desc'>
+		<div className={styles['film-desc']}>
 			{cards.map(card => (
 				<FilmCard 
 					key={card.id} 
