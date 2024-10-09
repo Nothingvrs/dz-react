@@ -23,7 +23,6 @@ function Menu() {
 					link: '/#'
 				})]);
 		}	
-		console.log(user);
 		user.isLogined = false;	
 	}, [user.name]);
 

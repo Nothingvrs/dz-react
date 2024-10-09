@@ -56,7 +56,7 @@ function Form({ onSubmit, buttonText, placehldr }: FormProps) {
 
 	return (
 		<form className={styles['form']} onSubmit={addProfile}>
-			<Input img={''} ref={inputRef} onChange={onChange} value={value} placehldr={placehldr} isValid={isValid}/>
+			<Input ref={inputRef} onChange={onChange} value={value} placehldr={placehldr} isValid={isValid}/>
 			<Button>{buttonText}</Button>
 		</form>
 	);

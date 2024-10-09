@@ -1,9 +1,10 @@
 interface card {
-		id: React.Key,
-		image: string,
-		titlecard: string,
+		key: number,
+		IMG_POSTER: string,
+		TITLE: string,
 		isFavourite: boolean,
-		favouriteCount: number
+		RANK: number,
+		IMDB_ID: number
 }
 
 export interface FilmDescProps {

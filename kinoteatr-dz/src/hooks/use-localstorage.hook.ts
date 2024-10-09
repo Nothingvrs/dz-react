@@ -3,7 +3,6 @@ import { useLocalStorageProps, dataProps } from './use-localstorage.props'
 
 export function useLocalStorage (key: string): useLocalStorageProps {
 	const [data, setData] = useState<dataProps>([]);
-	console.log(data)
 
 	useEffect(() => {
 		const item: string = localStorage.getItem(key)!;
@@ -14,7 +13,6 @@ export function useLocalStorage (key: string): useLocalStorageProps {
 	}, []);
 
 	const saveData = (newData: dataProps) => {
-		console.log(newData)
 		localStorage.setItem(key, JSON.stringify(newData));
 		setData(newData);
 	};
