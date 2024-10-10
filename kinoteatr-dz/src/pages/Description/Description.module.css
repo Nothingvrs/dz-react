@@ -1,0 +1,155 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+	margin-bottom: 80px;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 40px;
+	width: 100%;
+	border-radius: 24px;
+	backdrop-filter: blur(24px);
+	background: rgba(32, 40, 62, 0.8);
+}
+
+.title h1 {
+	margin: 0;
+	color: rgb(235, 238, 245);
+	font-family: Poppins;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 40px;
+	letter-spacing: -2%;
+	text-align: left;
+}
+
+.title p {
+	margin: 0;
+	color: rgb(190, 183, 251);
+	font-family: Poppins;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	text-align: left;
+}
+
+.film-image {
+	width: 480px;
+	height: 720px;
+	border-radius: 24px;
+}
+
+.favourite-button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	color: rgb(123, 110, 246);
+}
+
+.favourite {
+	color: rgb(55, 216, 167);
+}
+
+.card-wrapper-favourite {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	align-items: center;
+	margin-left: 8px;
+	margin-bottom: 6px;
+}
+
+.film-body {
+	display: flex;
+	gap: 80px
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 24px
+}
+
+.description-text {
+	margin: 0;
+	color: rgb(142, 149, 169);
+	font-family: Poppins;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 32px;
+	text-align: left;
+}
+
+.description-rate-details{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	width: 61px;
+	height: 32px;
+	padding: 4px 8px 4px 8px;
+	border-radius: 8px;
+	backdrop-filter: blur(8px);
+	background: rgba(32, 40, 62, 0.8);	
+	font-size: 16px;
+	font-weight: 400;
+	color: rgb(255, 189, 109);
+}
+
+.description-rate {
+	display: flex;
+	flex-direction: row;
+	gap: 24px
+}
+
+.description-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px
+}
+
+.description-title {
+	margin: 0;
+	color: rgb(118, 126, 148);
+	font-family: Poppins;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	text-align: left;
+}
+
+.reviews {
+	display: flex;
+	flex-direction: column;
+	gap: 14px
+}
+
+.wrapper-reviews {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 40px;
+	width: 100%;
+	border-radius: 24px;
+	backdrop-filter: blur(24px);
+	background: rgba(32, 40, 62, 0.8);
+}
+
+.header-reviews {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.title-reviews {
+	margin: 0;
+}
