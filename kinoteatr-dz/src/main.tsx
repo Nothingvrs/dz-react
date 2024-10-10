@@ -10,11 +10,24 @@ import Search from './pages/Search/Search.js';
 import SearchError from './pages/SearchError/SearchError.js';
 import axios from 'axios';
 import Description from './pages/Description/Description.js';
+import { RequireAuth } from './helpers/RequireAuth.js';
+import LoginLayout from './layouts/LoginLayout/LoginLayout.js'
 
 const router = createBrowserRouter([
 	{
+		path: '/auth',
+		element: <LoginLayout/>,
+		children: 
+		[
+			{
+				path: '/auth',
+				element: <Enter/>
+			},
+		]
+	},
+	{
 		path: '/',
-		element: <Layout/>,
+		element: <RequireAuth><Layout/></RequireAuth>,
 		children: [
 			{
 				path: '/',

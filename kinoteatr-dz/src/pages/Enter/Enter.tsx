@@ -26,10 +26,6 @@ function Enter() {
 		return flag;
 	}
 
-	function nextPath(path: string) {
-		navigate(path);
-	}
-
 	function addProfile(name: string) {
 		if (checkData(name)) {
 			setData([
@@ -44,7 +40,7 @@ function Enter() {
 				isLogined: true
 			});
 		}
-		nextPath('/search');
+		navigate('/search');
 	}
 
 	return (<>

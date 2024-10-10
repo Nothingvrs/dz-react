@@ -15,7 +15,7 @@ function Menu() {
 					id: 3,
 					text: user.name,
 					btnimg: '/profile.svg',
-					link: '/#'
+					link: '/favourite'
 				},
 				{
 					id: 4,
