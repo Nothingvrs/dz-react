@@ -14,10 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  
-}
-
 a {
   color: rgb(168, 174, 191);
   text-decoration: none; /* no underline */

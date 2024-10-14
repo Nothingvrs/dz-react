@@ -3,3 +3,7 @@
 	padding: 12px 16px 12px 16px;
 	gap: 6px; 
 }
+
+.active {
+	text-decoration: underline solid 3px rgb(123, 110, 246);
+}
