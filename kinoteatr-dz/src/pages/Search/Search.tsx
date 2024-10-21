@@ -5,6 +5,8 @@ import Form from '../../components/Form/Form';
 import { useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import SearchError from '../SearchError/SearchError';
+import { RootState } from '../../store/store';
+import { useSelector } from 'react-redux';
 
 function Search() {
 
@@ -12,8 +14,17 @@ function Search() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
 	const [isEmptySearch, setIsEmptySearch] = useState<boolean>(false);
-
+	const user = useSelector((s: RootState) => s.user);
 	
+	const checkFavourites = (cardsArray: any[]) => {
+		cardsArray.map(item => {
+			user.favourites.map(i => {
+				if (i.IMDB_ID === item.IMDB_ID) {
+					item.isFavourite = true
+				}
+			})
+		})
+	}
 
 	const getSearch = async (q: string) => {
 		try {
@@ -32,6 +43,7 @@ function Search() {
 				card['IMDB_ID'] = card['#IMDB_ID'];
   			delete card['#IMDB_ID'];
 			});
+			checkFavourites(data.description)
 			setCards(data.description);
 			setIsLoading(false);
 		} catch (e) {

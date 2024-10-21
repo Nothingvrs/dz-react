@@ -1,7 +1,7 @@
 import styles from './Input.module.css';
 import cl from 'classnames';
 import { forwardRef } from 'react';
-import { InputProps } from './Input.props'
+import { InputProps } from './Input.props';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ onChange, img, placehldr, isValid, value }: InputProps, ref) {
 		

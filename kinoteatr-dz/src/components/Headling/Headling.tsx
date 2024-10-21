@@ -1,5 +1,5 @@
 import styles from './Headling.module.css';
-import { HeadlingProps } from './Headling.props'
+import { HeadlingProps } from './Headling.props';
 
 function Headling({ children }:HeadlingProps) {
 

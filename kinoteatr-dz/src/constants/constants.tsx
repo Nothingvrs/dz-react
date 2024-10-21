@@ -8,7 +8,6 @@ export const BTNDATA = [
 	{
 		id: 2,
 		text: 'Мои фильмы',
-		btnimg: '/countFilms.svg',
 		link: '/favourite'
 	},
 	{
