@@ -57,12 +57,4 @@ function Menu() {
 	);
 }
 
-const mapStateToProps = function(state: UserState) {
-  return {
-    name: state.name,
-		isLogined: state.isLogined,
-		favourite: state.favourites
-  }
-}
-
-export default connect(mapStateToProps)(Menu);
+export default Menu;
