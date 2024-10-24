@@ -2,7 +2,6 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import Layout from './layouts/Layout/Layout.js';
 import './index.css';
-import { UserContextProvider } from './context/user.context.js';
 import { RouterProvider, createBrowserRouter, defer } from 'react-router-dom';
 import Enter from './pages/Enter/Enter.js';
 import Favourite from './pages/Favourite/Favourite.js';
@@ -11,7 +10,9 @@ import SearchError from './pages/SearchError/SearchError.js';
 import axios from 'axios';
 import Description from './pages/Description/Description.js';
 import { RequireAuth } from './helpers/RequireAuth.js';
-import LoginLayout from './layouts/LoginLayout/LoginLayout.js'
+import LoginLayout from './layouts/LoginLayout/LoginLayout.js';
+import { Provider } from 'react-redux';
+import { store } from './store/store.js';
 
 const router = createBrowserRouter([
 	{
@@ -64,8 +65,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root') as HTMLElement).render(
 	<StrictMode>
-		<UserContextProvider>
+		<Provider store={store}>
 			<RouterProvider router={router} />
-		</UserContextProvider>
+	  </Provider>
 	</StrictMode>
 );

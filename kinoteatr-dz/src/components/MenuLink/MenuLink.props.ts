@@ -1,7 +1,7 @@
 export interface MenuLinkProps {
 	link: string,
 	text: string,
-	img?: string,
+	count?: number | null,
 	onClick?: ((e: React.MouseEvent) => void) | null 
 
 }

@@ -4,6 +4,22 @@
 	gap: 6px; 
 }
 
+.count {
+	display: block;
+	border-radius: 50%;
+	height: 24px;
+	width: 24px;
+	background: rgb(123, 110, 246); 
+	text-align: center;
+	padding: 2px;
+	color: rgb(255, 255, 255);
+	font-family: Poppins;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 2%;
+}
+
 .active {
 	text-decoration: underline solid 3px rgb(123, 110, 246);
 }

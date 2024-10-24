@@ -1,4 +1,4 @@
-interface card {
+export interface card {
 		key: number,
 		IMG_POSTER: string,
 		TITLE: string,

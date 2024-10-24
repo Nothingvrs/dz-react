@@ -1,4 +1,4 @@
-import { LogoProps } from './Logo.props'
+import { LogoProps } from './Logo.props';
 
 
 function Logo({ img }: LogoProps) {

@@ -1,15 +1,19 @@
 import MenuLink from '../MenuLink/MenuLink';
 import styles from './Menu.module.css';
 import { BTNDATA } from '../../constants/constants';
-import { useEffect, useState, useContext } from 'react';
-import { UserContext } from '../../context/user.context';
+import { useEffect, useState } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { userActions, UserState } from '../../store/user.slice';
 
 function Menu() {
+	let UserIsLoginned = true;
 	const [btndata, setBtnData] = useState(BTNDATA);
-	const { user, setUser } = useContext(UserContext);
+	const dispatch = useDispatch<AppDispatch>();
+	const user = useSelector((s: RootState) => s.user);
 
 	useEffect(() => {
-		if (user.isLogined) {
+		if (user.isLogined && UserIsLoginned) {
 			setBtnData(oldBtnData  =>
 				[...oldBtnData.toSpliced(-1,1, {
 					id: 3,
@@ -22,15 +26,13 @@ function Menu() {
 					text: 'Выйти',
 					link: '/#'
 				})]);
+				UserIsLoginned = false
 		}	
-		user.isLogined = false;	
 	}, [user.name]);
 
+	
 	function clearUser() {
-		setUser!({
-			name: '',
-			isLogined: false
-		});
+		dispatch(userActions.logout());
 	} 
 
 	const isLogginOut = () => {
@@ -39,11 +41,12 @@ function Menu() {
 	};
 
 	return (
+		
 		<div className={styles['menu']}>
 			{btndata.map(btn => (
 				<MenuLink key={btn.id}
 					text={btn.text}
-					img={btn.btnimg}
+					count={(btn.id === 2) ? user.favourites.length : null}
 					link={btn.link}
 					onClick = {(btn.id === 4) ? isLogginOut : null}
 				/>
@@ -55,4 +58,3 @@ function Menu() {
 }
 
 export default Menu;
-

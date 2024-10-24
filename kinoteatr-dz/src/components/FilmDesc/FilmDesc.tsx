@@ -3,7 +3,7 @@ import FilmCard from '../FilmCard/FilmCard';
 import { FilmDescProps } from './FilmDesc.props';
 
 function FilmDesc({ cards }: FilmDescProps) {
-		
+	
 	return (
 		<div className={styles['film-desc']}>
 			{cards.map(card => (

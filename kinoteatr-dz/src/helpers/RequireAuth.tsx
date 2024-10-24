@@ -1,10 +1,11 @@
 import { ReactNode, useContext } from 'react';
 import { Navigate } from 'react-router-dom';
-import { UserContext } from '../context/user.context'
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 export const RequireAuth = ({ children }: { children: ReactNode}) => {
-	const { user } = useContext(UserContext);
-	console.log(user)
+	const user = useSelector((s: RootState) => s.user);
+	
 	if (user.isLogined == false) {
 		return <Navigate to="/auth" replace />;
 	}
